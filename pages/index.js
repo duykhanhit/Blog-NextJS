@@ -1,65 +1,165 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Pagination from "../components/Pagination";
+import ListPost from "../components/ListPost";
+import Subcribe from "../components/Subcribe";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Trang chủ</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className="site-wrap">
+        <div className="site-mobile-menu">
+          <div className="site-mobile-menu-header">
+            <div className="site-mobile-menu-close mt-3">
+              <span className="icon-close2 js-menu-toggle"></span>
+            </div>
+          </div>
+          <div className="site-mobile-menu-body"></div>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <Header />
+        {/* <div className="site-section bg-light">
+          <div className="container">
+            <div className="row align-items-stretch retro-layout-2">
+              <div className="col-md-4">
+                <a
+                  href="single.html"
+                  className="h-entry mb-30 v-height gradient"
+                >
+                  <div className="text">
+                    <h2>
+                      The AI magically removes moving objects from videos.
+                    </h2>
+                    <span className="date">July 19, 2019</span>
+                  </div>
+                </a>
+                <a href="single.html" className="h-entry v-height gradient">
+                  <div className="text">
+                    <h2>
+                      The AI magically removes moving objects from videos.
+                    </h2>
+                    <span className="date">July 19, 2019</span>
+                  </div>
+                </a>
+              </div>
+              <div className="col-md-4">
+                <a href="single.html" className="h-entry img-5 h-100 gradient">
+                  <div className="text">
+                    <div className="post-categories mb-3">
+                      <span className="post-category bg-danger">Travel</span>
+                      <span className="post-category bg-primary">Food</span>
+                    </div>
+                    <h2>
+                      The AI magically removes moving objects from videos.
+                    </h2>
+                    <span className="date">July 19, 2019</span>
+                  </div>
+                </a>
+              </div>
+              <div className="col-md-4">
+                <a
+                  href="single.html"
+                  className="h-entry mb-30 v-height gradient"
+                >
+                  <div className="text">
+                    <h2>The 20 Biggest Fintech Companies In America 2019</h2>
+                    <span className="date">July 19, 2019</span>
+                  </div>
+                </a>
+                <a href="single.html" className="h-entry v-height gradient">
+                  <div className="text">
+                    <h2>The 20 Biggest Fintech Companies In America 2019</h2>
+                    <span className="date">July 19, 2019</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+        <div className="site-section">
+          <div className="container">
+            <ListPost />
+
+            <div className="row text-center pt-5 border-top">
+              <div className="col-md-12">
+                <Pagination />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="site-section bg-light">
+          <div className="container">
+            <div className="row align-items-stretch retro-layout">
+              <div className="col-md-5 order-md-2">
+                <a href="single.html" className="hentry img-1 h-100 gradient">
+                  <span className="post-category text-white bg-danger">
+                    Travel
+                  </span>
+                  <div className="text">
+                    <h2>The 20 Biggest Fintech Companies In America 2019</h2>
+                    <span>February 12, 2019</span>
+                  </div>
+                </a>
+              </div>
+
+              <div className="col-md-7">
+                <a
+                  href="single.html"
+                  className="hentry img-2 v-height mb30 gradient"
+                >
+                  <span className="post-category text-white bg-success">
+                    Nature
+                  </span>
+                  <div className="text text-sm">
+                    <h2>The 20 Biggest Fintech Companies In America 2019</h2>
+                    <span>February 12, 2019</span>
+                  </div>
+                </a>
+
+                <div className="two-col d-block d-md-flex">
+                  <a
+                    href="single.html"
+                    className="hentry v-height img-2 gradient"
+                  >
+                    <span className="post-category text-white bg-primary">
+                      Sports
+                    </span>
+                    <div className="text text-sm">
+                      <h2>The 20 Biggest Fintech Companies In America 2019</h2>
+                      <span>February 12, 2019</span>
+                    </div>
+                  </a>
+                  <a
+                    href="single.html"
+                    className="hentry v-height img-2 ml-auto gradient"
+                  >
+                    <span className="post-category text-white bg-warning">
+                      Lifestyle
+                    </span>
+                    <div className="text text-sm">
+                      <h2>The 20 Biggest Fintech Companies In America 2019</h2>
+                      <span>February 12, 2019</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+        <div className="site-section bg-lightx">
+          <Subcribe />
+        </div>
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
